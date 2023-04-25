@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import datetime
-
+from .config import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -65,7 +65,7 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
-    'JWT_SECRET_KEY': '43ab631318d092e0ddc7c9be760150bd84fde380e1e4b67460eca0db5f6a39df',
+    'JWT_SECRET_KEY': JWT_Key,
 }
 
 ROOT_URLCONF = "genlens.urls"
@@ -98,7 +98,7 @@ DATABASES = {
         'NAME': 'application',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': '#King_Josh$$$2004###'
+        'PASSWORD': dbPassword
     }
 }
 
